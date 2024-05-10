@@ -47,7 +47,8 @@ function install_docker () {
   sudo sh get-docker.sh && \
   sudo systemctl enable docker && \
   sudo systemctl start docker.socket && \
-  sudo systemctl start docker.service
+  sudo systemctl start docker.service && \
+  sudo usermod -a -G docker $USER
 }
 # ------------------------------------------------------------------------ #
 
