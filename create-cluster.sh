@@ -41,12 +41,18 @@ function install_kubectl () {
   chmod +x ./kind && \
   sudo mv ./kind /usr/local/bin/kind
 }
+
+function install_docker () {
+  curl -fsSL https://get.docker.com -o get-docker.sh && \
+  sudo sh get-docker.sh && \
+}
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- TESTES ----------------------------------------- #
 [ -z "`which curl`" ] && sudo apt install_curl -y
 [ -z "`which curl`" ] && sudo apt install_kind -y
 [ -z "`which curl`" ] && sudo apt install_kubectl -y
+[ -z "`which curl`" ] && sudo apt install_docker -y
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- EXECUÇÃO ----------------------------------------- #
