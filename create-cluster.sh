@@ -29,10 +29,17 @@ function install_curl () {
     fedora) sudo yum install curl -y ;;
   esac
 }
+
+function install_kind () {
+  curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64 && \
+  chmod +x ./kind && \
+  sudo mv ./kind /usr/local/bin/kind
+}
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- TESTES ----------------------------------------- #
-[ -n "`which curl`" ] && sudo apt install curl -y
+[ -z "`which curl`" ] && sudo apt install_curl -y
+[ -z "`which curl`" ] && sudo apt install_kind -y
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- EXECUÇÃO ----------------------------------------- #
