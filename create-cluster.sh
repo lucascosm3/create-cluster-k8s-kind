@@ -35,11 +35,18 @@ function install_kind () {
   chmod +x ./kind && \
   sudo mv ./kind /usr/local/bin/kind
 }
+
+function install_kubectl () {
+  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
+  chmod +x ./kind && \
+  sudo mv ./kind /usr/local/bin/kind
+}
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- TESTES ----------------------------------------- #
 [ -z "`which curl`" ] && sudo apt install_curl -y
 [ -z "`which curl`" ] && sudo apt install_kind -y
+[ -z "`which curl`" ] && sudo apt install_kubectl -y
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- EXECUÇÃO ----------------------------------------- #
