@@ -26,6 +26,7 @@ function install_curl () {
   
   case "`get_distro`" in
     ubuntu) sudo apt install curl -y ;;
+    fedora) sudo yum install curl -y ;;
   esac
 }
 # ------------------------------------------------------------------------ #
