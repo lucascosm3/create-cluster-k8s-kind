@@ -14,6 +14,7 @@
 # ------------------------------------------------------------------------ #
 
 source libs/functions_deps.sh
+source libs/functions_main.sh
 
 # ------------------------------- VARIÁVEIS ----------------------------------------- #
 CLUSTER_NAME="demo"
@@ -31,4 +32,4 @@ CLUSTER_NAME="demo"
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- EXECUÇÃO ----------------------------------------- #
-kind create cluster --config config/config.yaml  --name $CLUSTER_NAME
+_create_cluster
