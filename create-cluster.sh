@@ -38,3 +38,5 @@ while [ -n "$1" ]; do
   esac
   shift
 done
+
+_create_cluster
