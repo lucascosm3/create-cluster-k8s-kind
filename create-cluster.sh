@@ -19,6 +19,7 @@ source libs/functions_main.sh
 # ------------------------------- VARIÁVEIS ----------------------------------------- #
 CLUSTER_NAME="demo"
 ENABLE_INGRESS=1
+ENABLE_METALLB=1
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- TESTES ----------------------------------------- #
@@ -33,6 +34,7 @@ while [ -n "$1" ]; do
   case "$1" in
     --cluster-name) shift; CLUSTER_NAME="$1" ;;
     --no-ingress) ENABLE_INGRESS=0           ;;
+    --no-metallb) ENABLE_INGRESS=0           ;;
   esac
   shift
 done
