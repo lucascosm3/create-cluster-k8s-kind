@@ -32,4 +32,9 @@ CLUSTER_NAME="demo"
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- EXECUÇÃO ----------------------------------------- #
-_create_cluster
+while [ -n "$1" ]; do
+  case "$1" in
+    --cluster-name) shift; CLUSTER_NAME="$1" ;;
+  esac
+  shift
+done
