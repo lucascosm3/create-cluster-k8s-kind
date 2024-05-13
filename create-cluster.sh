@@ -31,11 +31,15 @@ ENABLE_METALLB=1
 # ------------------------------- FUNCTIONS ----------------------------------------- #
 function trapped () {
   echo "Error on line $1."
+  echo "Debug: Last command to run was $(BASH_COMMAND)"
   _clean
   exit 1
 }
 
 trap 'trapped $LINENO' ERR
+echo "Running kind create cluster"
+_create_cluster
+echo "Kind cluster created successfully"
 # ------------------------------- TESTS ----------------------------------------- #
 [ -z "`which curl`" ] && _install_curl
 [ -z "`which kind`" ] && _install_kind
@@ -55,5 +59,4 @@ while [ -n "$1" ]; do
   shift
 done
 
-_create_cluster
 # ------------------------------------------------------------------------------------- #
