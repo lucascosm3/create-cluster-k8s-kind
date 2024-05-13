@@ -23,8 +23,12 @@ ENABLE_METALLB=1
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- FUNCTIONS ----------------------------------------- #
+function trapped () {
+  echo "Error on line $1."
+  exit 1
+}
 
-
+trap 'trapped $LINENO' ERR
 # ------------------------------- TESTES ----------------------------------------- #
 [ -z "`which curl`" ] && sudo apt _install_curl -y
 [ -z "`which curl`" ] && sudo apt _install_kind -y
