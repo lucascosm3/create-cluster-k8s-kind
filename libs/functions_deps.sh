@@ -18,8 +18,8 @@ function _install_kind () {
 
 function _install_kubectl () {
   curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
-  chmod +x ./kind && \
-  sudo mv ./kind /usr/local/bin/kind
+  chmod +x ./kubectl && \
+  sudo mv ./kubectl /usr/local/bin/kind
 }
 
 function _install_docker () {

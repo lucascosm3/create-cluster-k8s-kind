@@ -14,9 +14,6 @@
 # ------------------------------------------------------------------------ #
 echo "Starting installation of dependencies..."
 source libs/functions_deps.sh
-_install_docker
-_install_kind
-_install_kubectl
 echo "Installed dependencies"
 source libs/functions_main.sh
 
