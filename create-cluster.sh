@@ -33,8 +33,10 @@ ENABLE_METALLB=1
 while [ -n "$1" ]; do
   case "$1" in
     --cluster-name) shift; CLUSTER_NAME="$1" ;;
-    --no-ingress) ENABLE_INGRESS=0           ;;
-    --no-metallb) ENABLE_INGRESS=0           ;;
+    --no-ingress)     ENABLE_INGRESS=0           ;;
+    --no-metallb)     ENABLE_INGRESS=0           ;;
+    -h|--help)        _help; exit                ;;
+    *)                _error "$1"                     ;;
   esac
   shift
 done
