@@ -32,6 +32,7 @@ function _install_docker () {
   sudo systemctl start docker.socket && \
   sudo systemctl start docker.service && \
   sudo usermod -aG docker $USER && \
-  echo ">> Run the command 'newgrp docker' and start the script again." && \
-  exit
+  echo ">> Docker installed successfully. Please log out and log back in if necessary."
+}
+
 }
