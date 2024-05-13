@@ -12,8 +12,12 @@
 # Tested on::
 #   bash 5.1.16
 # ------------------------------------------------------------------------ #
-
+echo "Starting installation of dependencies..."
 source libs/functions_deps.sh
+_install_docker
+_install_kind
+_install_kubectl
+echo "Installed dependencies"
 source libs/functions_main.sh
 
 # ------------------------------- VARIABLES ----------------------------------------- #
@@ -44,7 +48,7 @@ while [ -n "$1" ]; do
     --no-ingress)     ENABLE_INGRESS=0           ;;
     --no-metallb)     ENABLE_INGRESS=0           ;;
     -h|--help)        _help; exit                ;;
-    *)                _error "$1"                     ;;
+    *)                _error "$1"                ;;
   esac
   shift
 done
