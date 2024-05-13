@@ -32,3 +32,7 @@ function _error () {
   _help
   exit 1
 }
+
+function _clean () {
+  rm -f get-docker.sh
+}

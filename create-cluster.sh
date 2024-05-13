@@ -25,6 +25,7 @@ ENABLE_METALLB=1
 # ------------------------------- FUNCTIONS ----------------------------------------- #
 function trapped () {
   echo "Error on line $1."
+  _clean
   exit 1
 }
 
