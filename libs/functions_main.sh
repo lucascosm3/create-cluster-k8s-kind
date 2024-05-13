@@ -14,3 +14,21 @@ function _deploy_ingress () {
 function _deploy_metallb () {
   kubectl apply -f config/metallb/metallb.yaml
 }
+
+function _help () {
+  echo "
+$ ./create-cluster.sh [parameters]
+
+Accepted parameters:
+  --no-ingress - Will not deploy NGINX Ingress
+  --no-metallb - Will not deploy Metal LB
+  --cluster-name <name> - Tells what the name of the created cluster will be
+  -h | --help - Help menu
+  "
+}
+
+function _error () {
+  echo "Parameter $1 does not exist."
+  _help
+  exit 1
+}
