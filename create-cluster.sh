@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 #
-# script_name.sh - Brief description
+# create-cluster.sh - Create a Kubernetes cluster with Kind and extensions
 #
-#
+# Autor: Lucas Cosme
 # ------------------------------------------------------------------------ #
 #  Description
 #
 #  Examples:
-#      $ ./scriptname.sh -d 1
+#      $ ./create-cluster.sh --no-ingress --no-metallb --cluster-name demo
 # ------------------------------------------------------------------------ #
 # Tested on::
-#   bash x.y.zz
+#   bash 5.1.16
 # ------------------------------------------------------------------------ #
 
 source libs/functions_deps.sh
